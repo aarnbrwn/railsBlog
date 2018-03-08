@@ -1,0 +1,11 @@
+<div class="container">
+  <h2>Edit Post</h2>
+
+  <%= form_for @post do |f| %>
+
+    <div><%= f.text_field :title %></div>
+    <div><%= f.text_area :content %></div>
+    <div><%= f.submit %></div>
+
+  <% end %>
+</div>

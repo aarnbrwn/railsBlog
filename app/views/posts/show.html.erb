@@ -1,0 +1,36 @@
+<div class="container">
+  <h1><% @post.title %></h1>
+
+  <div> <%= @post.content %></div>
+
+  <div>Created By: <%= @user.username %></div>
+
+  <% if session[:user_id] == @post.user_id %>
+
+    <%= link_to 'Edit', edit_post_path, method: :get %>
+    <%= link_to "Delete", post_path, method: :delete %>
+
+  <% end %>
+
+  <% @post.comments.each do |t| %>
+
+    <div>
+      <% user = User.find_by_id(t.user_id) %>
+      <%= user.username %> said: <br>
+      <%= t.content %>
+
+      <% if session[:user_id] == t.user_id %>
+        <a href="/posts/<%= @post.id %>/comments/<%= t.id %>/edit">Edit</a>
+      <% end %>
+    </div>
+  <% end %>
+
+  <% if session[:user_id] %>
+    <%= form_with(model: [@post, @post.comments.build]) do |f| %>
+    <div>
+      <%= f.text_area :content %>
+    </div>
+    <%= f.submit %>
+    <% end %>
+  <% end %>
+</div>

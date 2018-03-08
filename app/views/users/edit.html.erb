@@ -1,0 +1,21 @@
+<div class="container">
+  <h1>Edit Account</h1>
+
+  <%= form_for @user do |t| %>
+    <div>Username: <%= t.text_field :username %></div>
+    <div>Password: <%= t.text_field :password %></div>
+    <%= t.submit %>
+  <% end %>
+  <input id="deleteBtn" type="button" value="Delete Account">
+  <div id="deleteConfirm" style='display: none'>
+    <%= link_to "Confirm Delete Account", user_path, method: :delete %>
+  </div>
+</div>
+
+<script type="text/javascript">
+  var deleteBtn = document.getElementById('deleteBtn');
+  var deleteConfirm = document.getElementById('deleteConfirm')
+  deleteBtn.addEventListener('click', function () {
+  deleteConfirm.style.display = 'block';
+  });
+</script>

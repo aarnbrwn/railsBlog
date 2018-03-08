@@ -1,0 +1,12 @@
+<div class="container">
+  <%= form_for @comment, url: {action: 'update'} do |f| %>
+
+    <div>
+      <%= f.text_area :content %>
+    </div>
+
+    <%= f.submit %>
+  <% end %>
+
+  <%= link_to 'Delete Comment', post_comment_path, method: :delete %>
+</div>

@@ -1,0 +1,17 @@
+<div class="container">
+  <h1>Welcome to Shitter</h1>
+
+  <h2>Login</h2>
+
+  <%= form_tag(login_path) do %>
+    <div>
+      Username: <%= text_field_tag :username %>
+    </div>
+    <div>
+      Password: <%= text_field_tag :password %>
+    </div>
+    <%= submit_tag "Login" %>
+  <% end %>
+
+  <!-- <h2><a href="../users/new">Sign Up</a></h2> -->
+</div>

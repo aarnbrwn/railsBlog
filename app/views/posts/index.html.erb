@@ -1,0 +1,11 @@
+<div class="container">
+  <h2>Recent Posts</h2>
+
+  <% @posts.each do |t| %>
+
+    <div>
+      <a href="/posts/<%= t.id %>"><%= t.title %></a>
+    </div>
+
+  <% end %>
+</div>

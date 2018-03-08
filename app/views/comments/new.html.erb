@@ -1,0 +1,8 @@
+<div class="container">
+  <%form_for [@post, @post.comments.build] do |f| %>
+    <div>
+      <%= f.text_area :content %>
+    </div>
+    <%= f.submit %>
+  <% end %>
+</div>

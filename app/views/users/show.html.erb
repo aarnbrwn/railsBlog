@@ -1,0 +1,13 @@
+<div class="container">
+  <h1>Current User: <%= @user.username %></h1>
+
+  <h2>Posts</h2>
+
+  <% @posts.each do |t| %>
+
+    <div>
+      <a href="/posts/<%= t.id %>"><%= t.title %></a>
+    </div>
+
+  <% end %>
+</div>

@@ -1,0 +1,28 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.navbar {
+border-bottom: 2px solid;
+height: 35px;
+}
+
+a {
+  text-decoration: none;
+}
+
+.navLeft li {
+  float: left;
+  height: 15px;
+  margin: 5px 5px 5px 10px;
+
+  list-style-type: none;
+}
+
+.navRight li {
+  float: right;
+  height: 15px;
+  margin: 5px;
+  list-style-type: none;
+}
