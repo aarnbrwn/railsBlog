@@ -3,33 +3,62 @@
   <head>
     <title>NewBlog</title>
     <%= csrf_meta_tags %>
-
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-    <div class="navbar">
-      <nav>
-        <ul class="navLeft">
-          <li><a href="/">Home</a></li>
-          <li><a href="/users">List of Users</a></li>
-          <% if session[:user_id] == nil %>
-          <li><a href="/users/new">Sign Up</a></li>
-          <li><a href="/login">Login</a></li>
-          <% end %>
-          <% if session[:user_id] %>
-          <li><a href="/posts/new">Create a Post</a></li>
-          <li><a href="/users/<%= session[:user_id] %>">Your  Posts</a></li>
-        </ul>
-        <ul class="navRight">
-          <li><a href="/users/<%= session[:user_id] %>/edit">Settings</a></li>
-          <li><%= link_to "Log Out", logout_path, method: :get %></li>
-          <% end %>
-        </ul>
-      </nav>
+    <div class="wrapper">
+      <div id="menuBtn">
+        Menu
+      </div>
+      <div class="navbar">
+        <nav>
+          <ul class="navLeft">
+            <!-- <li id="closeMenu"><a href="#">Close Menu</a></li> -->
+            <li><a href="/">Home</a></li>
+            <li><a href="/users">List of Users</a></li>
+            <% if session[:user_id] == nil %>
+            <li><a href="/users/new">Sign Up</a></li>
+            <li><a href="/login">Login</a></li>
+            <% end %>
+            <% if session[:user_id] %>
+            <li><a href="/posts/new">Create a Post</a></li>
+            <li><a href="/users/<%= session[:user_id] %>">Your  Posts</a></li>
+          </ul>
+          <ul class="navRight">
+            <li><a href="/users/<%= session[:user_id] %>/edit">Settings</a></li>
+            <li><%= link_to "Log Out", logout_path, method: :get %></li>
+            <% end %>
+          </ul>
+        </nav>
+      </div>
+      <%= flash[:message] if flash[:message] %>
+      <div class="content">
+        <%= yield %>
+      </div>
     </div>
-    <%= flash[:message] if flash[:message] %>
-    <%= yield %>
+    <footer class="mainFoot">
+      my footer
+    </footer>
+    <script>
+      const mq = window.matchMedia( "(min-width: 510px)" );
+      var close = document.getElementById('closeMenu');
+      var nav = document.getElementsByClassName('navbar')[0];
+      var content = document.getElementsByClassName('content')[0];
+      menuBtn.addEventListener('click', function() {
+        nav.style.display = 'block';
+        menuBtn.style.display = 'none';
+        content.style.paddingTop = '0';
+        close.style.display = 'block';
+      });
+
+      nav.addEventListener('click', function() {
+        nav.style.display = 'none';
+        menuBtn.style.display = 'block';
+        content.style.paddingTop = '4em';
+      });
+    </script>
   </body>
 </html>

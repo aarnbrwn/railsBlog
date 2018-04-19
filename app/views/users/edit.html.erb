@@ -2,8 +2,8 @@
   <h1>Edit Account</h1>
 
   <%= form_for @user do |t| %>
-    <div>Username: <%= t.text_field :username %></div>
-    <div>Password: <%= t.text_field :password %></div>
+    <div><%= t.text_field :username, placeholder: 'New Username' %></div>
+    <div><%= t.text_field :password, placeholder: 'New Password' %></div>
     <%= t.submit %>
   <% end %>
   <input id="deleteBtn" type="button" value="Delete Account">

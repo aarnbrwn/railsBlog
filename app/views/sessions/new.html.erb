@@ -1,14 +1,14 @@
 <div class="container">
-  <h1>Welcome to Shitter</h1>
+  <h1>Welcome to Blogger!</h1>
 
   <h2>Login</h2>
 
   <%= form_tag(login_path) do %>
     <div>
-      Username: <%= text_field_tag :username %>
+      <%= text_field_tag :username, nil, placeholder: 'Username' %>
     </div>
     <div>
-      Password: <%= text_field_tag :password %>
+      <%= password_field_tag :password, nil, placeholder: 'Password'  %>
     </div>
     <%= submit_tag "Login" %>
   <% end %>
