@@ -1,5 +1,7 @@
 textarea {
   margin-top: 1em;
+  height: 15em;
+  width: 70%;
 }
 
 ::-webkit-input-placeholder {
@@ -20,16 +22,19 @@ textarea {
 
 .container a {
   text-decoration: none;
-  color: green;
-  // background: grey;
+  color: black;
 }
 
 .container div {
   border: 1px solid;
-  width: 40%;
+  width: 20%;
   margin: 1em auto;
+  background: rgb(195, 195, 195);
+  border-radius: 1em;
 }
 
 input[type=submit] {
-  background: green;
+  background: rgb(97, 187, 117);
+  width: 10%;
+  border-radius: .45em;
 }
