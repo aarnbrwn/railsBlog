@@ -2,6 +2,19 @@ textarea {
   margin-top: 1em;
   height: 15em;
   width: 70%;
+  resize: none;
+  border: 1px solid #000;
+}
+
+input[type=text] {
+  width: 50%;
+  border: 1px solid #000;
+}
+
+input[type=submit] {
+  background: rgb(97, 187, 117);
+  width: 10%;
+  border-radius: .45em;
 }
 
 ::-webkit-input-placeholder {
@@ -31,10 +44,4 @@ textarea {
   margin: 1em auto;
   background: rgb(195, 195, 195);
   border-radius: 1em;
-}
-
-input[type=submit] {
-  background: rgb(97, 187, 117);
-  width: 10%;
-  border-radius: .45em;
 }
