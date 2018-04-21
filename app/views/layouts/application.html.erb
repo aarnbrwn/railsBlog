@@ -10,9 +10,8 @@
 
   <body>
     <div class="wrapper">
-      <div id="menuBtn">
-        Menu
-      </div>
+      <label for="menuBtn" class="menuLabel">Menu</label>
+      <input type="checkbox" id="menuBtn" role="button">
       <div class="navbar">
         <nav>
           <ul class="navLeft">
@@ -34,31 +33,36 @@
           </ul>
         </nav>
       </div>
-      <%= flash[:message] if flash[:message] %>
+      <%# flash[:message] if flash[:message] %>
+      <% flash.each do |key, value| %>
+        <div class="alert-<%= key %>"><%= value %></div>
+      <% end %>
       <div class="content">
         <%= yield %>
       </div>
     </div>
     <footer class="mainFoot">
-      my footer
+      Blogger &#169; 2018
     </footer>
-    <script>
-      const mq = window.matchMedia( "(min-width: 510px)" );
-      var close = document.getElementById('closeMenu');
+    <!-- <script>
+      // const mq = window.matchMedia( "(min-width: 510px)" );
+      // var close = document.getElementById('closeMenu');
       var nav = document.getElementsByClassName('navbar')[0];
       var content = document.getElementsByClassName('content')[0];
-      menuBtn.addEventListener('click', function() {
-        nav.style.display = 'block';
-        menuBtn.style.display = 'none';
-        content.style.paddingTop = '0';
-        close.style.display = 'block';
-      });
-
-      nav.addEventListener('click', function() {
-        nav.style.display = 'none';
-        menuBtn.style.display = 'block';
-        content.style.paddingTop = '4em';
-      });
-    </script>
+      if (nav.style.display = 'none') {
+        menuBtn.addEventListener('click', function() {
+          nav.style.display = 'block';
+          // menuBtn.style.display = 'none';
+          content.style.paddingTop = '0';
+          close.style.display = 'block';
+        });
+      } else {
+        nav.addEventListener('click', function() {
+          nav.style.display = 'none';
+          menuBtn.style.display = 'block';
+          content.style.paddingTop = '4em';
+        });
+      }
+    </script> -->
   </body>
 </html>

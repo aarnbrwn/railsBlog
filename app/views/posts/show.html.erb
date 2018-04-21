@@ -16,9 +16,8 @@
 
     <div>
       <% user = User.find_by_id(t.user_id) %>
-      <%= user.username %> said: <br>
-      <%= t.content %>
-
+      <%= user.username %> said: <%= t.content %>
+  
       <% if session[:user_id] == t.user_id %>
         <a href="/posts/<%= @post.id %>/comments/<%= t.id %>/edit">Edit</a>
       <% end %>
@@ -30,7 +29,7 @@
     <div>
       <%= f.text_area :content %>
     </div>
-    <%= f.submit %>
+    <%= f.submit 'Comment'%>
     <% end %>
   <% end %>
 </div>

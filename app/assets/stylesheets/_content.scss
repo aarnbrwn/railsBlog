@@ -1,0 +1,40 @@
+textarea {
+  margin-top: 1em;
+  height: 15em;
+  width: 70%;
+}
+
+::-webkit-input-placeholder {
+   text-align: center;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+   text-align: center;
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+   text-align: center;
+}
+
+:-ms-input-placeholder {
+   text-align: center;
+}
+
+.container a {
+  text-decoration: none;
+  color: black;
+}
+
+.container div {
+  border: 1px solid;
+  width: 20%;
+  margin: 1em auto;
+  background: rgb(195, 195, 195);
+  border-radius: 1em;
+}
+
+input[type=submit] {
+  background: rgb(97, 187, 117);
+  width: 10%;
+  border-radius: .45em;
+}
