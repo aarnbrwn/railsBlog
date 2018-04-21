@@ -6,26 +6,32 @@
   // text-transform: uppercase;
 }
 
-#menuBtn {
-  background: rgb(82, 140, 227);
-  color: white;
+.menuLabel {
+  // font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  text-decoration: none;
+  color: #fff;
+  // background: #19c589;
   text-align: center;
-  width: 30%;
+  // padding: 10px 0;
+  display: block;
+  background: rgb(82, 140, 227);
+  // color: white;
+  text-align: center;
+  width: 100%;
   margin: 0 auto;
-  margin-bottom: 5em;
+  // margin-bottom: 5em;
   height: 4em;
   line-height: 4em;
   transition: color 1s;
-  position: fixed;
-  top: 0;
-  left: 35%;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-
+  // position: fixed;
+  // top: 0;
+  // left: 35%;
+  // -webkit-user-select: none;
+  // -moz-user-select: none;
+  // -ms-user-select: none;
 }
 
-#menuBtn:hover {
+.menuLabel:hover {
   color: black;
   cursor: pointer;
 }
@@ -37,10 +43,9 @@
 .navbar {
 background: rgb(82, 140, 227);
 text-align: center;
-width: 60%;
+width: 100%;
 margin: 0 auto;
 display: none;
-border-radius: .5em;
 -webkit-user-select: none;
 -moz-user-select: none;
 -ms-user-select: none;
@@ -50,9 +55,10 @@ border-radius: .5em;
   text-decoration: none;
   color: white;
   display: inline-block;
+  border-top: 1px solid white;
   width: 100%;
-  height: 2em;
-  line-height: 2em;
+  height: 4em;
+  line-height: 4em;
   transition: color 1s;
 }
 
@@ -68,12 +74,24 @@ border-radius: .5em;
 
 .content {
   padding-top: 4em;
+  padding-bottom: 4em;
 }
 
 .mainFoot {
   height: 2em;
+  line-height: 2em;
   text-align: center;
   background: rgb(82, 140, 227);
+  color: white;
+}
+
+/*Hide checkbox*/
+input[type=checkbox]{
+    display: none;
+}
+/*Show menu when invisible checkbox is checked*/
+input[type=checkbox]:checked ~ .navbar{
+    display: block;
 }
 
 @media (min-width: 510px) {
@@ -81,7 +99,7 @@ border-radius: .5em;
     display: none;
   }
 
-  #closeMenu {
+  .menuLabel {
     display: none;
   }
 
@@ -91,6 +109,12 @@ border-radius: .5em;
     width: 100%;
     display: block;
     border-radius: 0;
+  }
+
+  .navbar a {
+    border-top: none;
+    height: 2em;
+    line-height: 2em;
   }
 
   .navLeft li {
